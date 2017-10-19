@@ -5,4 +5,4 @@ To create a _readme.md_ file, you need to press **cmd+spacebar and type in _texe
 _changes_
 
 
-#### **by Tim Germershausen
+#### **by Tim Germershausen**

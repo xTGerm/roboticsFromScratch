@@ -1,8 +1,9 @@
 #define trigPin 12
 #define echoPin 13
-#define led1 13
+#define led1 LED_BUILTIN
 
-
+long duration, distance;
+ 
 void setup() {
   Serial.begin (9600);
   pinMode(trigPin, OUTPUT);
@@ -13,14 +14,18 @@ void setup() {
 }
 
 void loop() {
- long duration, distance;
+  
   digitalWrite(trigPin, LOW); 
-  delayMicroseconds(0); 
+  delayMicroseconds(2); 
   digitalWrite(trigPin, HIGH);
-  delayMicroseconds(0); 
+  delayMicroseconds(10); 
   digitalWrite(trigPin, LOW);
+  
   duration = pulseIn(echoPin, HIGH);
   distance = (duration/2) / 29.1;
+  
+  Serial.println("distance : " + String(distance) + "cm");
+  
   if (distance < 10) {  
     digitalWrite(led1,HIGH); 
 
